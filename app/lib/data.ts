@@ -5,6 +5,7 @@ import {
   InvoiceForm,
   InvoicesTable,
   LatestInvoiceRaw,
+  MtCO2,
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
@@ -213,5 +214,36 @@ export async function fetchFilteredCustomers(query: string) {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
+  }
+}
+
+
+
+export async function fetchFilteredMtCO2Countries(query: string) {
+  try {
+    console.log("fetchFilteredMtCO2Countries");
+    const data = await sql<MtCO2>`
+		SELECT
+		  mtco2.id,
+		  mtco2.name,
+		  mtco2.year_2020,
+		  mtco2.year_2021,
+      mtco2.year_2022,
+      mtco2.three_year_production
+		FROM mtco2
+    WHERE
+    mtco2.name ILIKE ${`%${query}%`}
+    `;
+
+
+    const countries = data.rows.map((country) => ({
+      ...country,
+    }));
+
+    return countries;
+  } catch (err) {
+    console.log(err)
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch mtco2 countries table.');
   }
 }

@@ -40,7 +40,7 @@ export default async function RevenueChart() {
             <div key={month.month} className="flex flex-col items-center gap-2">
               {/* bars */}
               <div
-                className="w-full rounded-md bg-blue-300"
+                className="w-full rounded-md bg-emerald-300"
                 style={{
                   height: `${(chartHeight / topLabel) * month.revenue}px`,
                 }}

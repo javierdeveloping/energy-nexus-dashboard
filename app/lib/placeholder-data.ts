@@ -9,6 +9,15 @@ const users = [
   },
 ];
 
+const admin = [
+  {
+    id: '360f079e-e68e-46df-b057-ee926dfd4c0b',
+    name: 'Zeus',
+    email: 'zeus@energynexus.com',
+    password: '123456'
+  }
+]
+
 const customers = [
   {
     id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
@@ -143,5 +152,7 @@ const revenue = [
   { month: 'Nov', revenue: 3000 },
   { month: 'Dec', revenue: 4800 },
 ];
+
+
 
 export { users, customers, invoices, revenue };

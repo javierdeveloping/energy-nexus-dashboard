@@ -86,3 +86,21 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+export type MtCO2 = {
+  id: string;
+  name: string;
+  year_2020: number;
+  year_2021: number;
+  year_2022: number;
+  three_year_production: number;
+}
+
+export type FormattedMtCO2Table = {
+  id: string;
+  name: string;
+  year_2020: number;
+  year_2021: number;
+  year_2022: number;
+  three_year_production: number;
+};
