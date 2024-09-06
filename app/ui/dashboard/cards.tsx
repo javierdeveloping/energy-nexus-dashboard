@@ -1,12 +1,12 @@
+import { fetchCardEnergyData } from '@/app/lib/data';
+import { lusitana } from '@/app/ui/fonts';
 import {
   BanknotesIcon,
   ClockIcon,
-  UserGroupIcon,
-  InboxIcon,
   GlobeAsiaAustraliaIcon,
+  InboxIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline';
-import { lusitana } from '@/app/ui/fonts';
-import { fetchCardData, fetchCardEnergyData, fetchFilteredMtCO2Countries } from '@/app/lib/data';
 
 const iconMap = {
   collected: BanknotesIcon,
