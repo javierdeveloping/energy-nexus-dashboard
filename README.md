@@ -4,6 +4,31 @@ This is a project created from the final template for the Next.js App Router Cou
 The project have used data from Global Carbon Atlas Project supported by BNP Paribas Foundation
 https://globalcarbonatlas.org/
 
+### Live demo ###
+
+https://energy-nexus-dashboard-61m2lkj2x-javiers-projects-dc50c503.vercel.app/
+
+User: user@nextmail.com
+Password: 123456
+
+### TO-DO list ###
+
+General:
+
+- Add admin features
+
+- Add CO2 futures chats using external data providers
+
+Countries: 
+
+- Allow user to sort data by country name, each year or three year production
+
+- Add hover effects when examining charts and show data value
+
+
+
+
+
 
 
 
