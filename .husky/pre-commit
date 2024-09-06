@@ -1,0 +1,9 @@
+
+# Print a message indicating the start of the script
+echo "Starting pre-commit hook..."
+
+pnpm run format
+
+# Print a message after tests are run
+echo "Finished pre-commit hook."
+

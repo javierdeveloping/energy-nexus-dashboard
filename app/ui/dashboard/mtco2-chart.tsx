@@ -10,13 +10,10 @@ import { CalendarIcon } from '@heroicons/react/24/outline';
 // https://airbnb.io/visx/
 
 export default async function MtCO2Chart() {
-
   const data = await fetchMtCO2Chart();
 
   const chartHeight = 350;
   const { yAxisLabels, topLabel } = generateYAxisEnergy(data);
-
-
 
   if (!data || data.length === 0) {
     return <p className="mt-4 text-gray-400">No data available.</p>;
@@ -25,7 +22,7 @@ export default async function MtCO2Chart() {
   return (
     <div className="w-full md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Worldwide MtCO2 production by year 
+        Worldwide MtCO2 production by year
       </h2>
       <div className="rounded-xl bg-gray-50 p-4">
         <div className="sm:grid-cols-5 mt-0 grid grid-cols-4 items-end gap-2 rounded-md bg-white p-4 md:gap-4">

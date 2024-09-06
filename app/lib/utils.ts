@@ -1,8 +1,5 @@
 import { MtCO2Year } from './definitions';
 
-
-
-
 export const generateYAxisEnergy = (data: MtCO2Year[]) => {
   // Calculate what labels we need to display on the y-axis
   // based on highest record and in 1000s

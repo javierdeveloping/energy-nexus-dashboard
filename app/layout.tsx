@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: '%s | Energy Dashboard',
     default: 'Energy Dashboard',
   },
-  description: 'A dashboard for energy products. Built with App Router.'
+  description: 'A dashboard for energy products. Built with App Router.',
 };
 export default function RootLayout({
   children,

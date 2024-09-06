@@ -6,7 +6,7 @@ import GlobalAtlasProjectReference from '@/app/ui/globalAtlasLink';
 import {
   CardsEnergySkeleton,
   MtCO2ChartSkeleton,
-  TopProducersSkeleton
+  TopProducersSkeleton,
 } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 
@@ -16,7 +16,7 @@ export default async function Page() {
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Dashboard
       </h1>
-      <GlobalAtlasProjectReference/>
+      <GlobalAtlasProjectReference />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Suspense fallback={<CardsEnergySkeleton />}>
           <CardEnergyWrapper />

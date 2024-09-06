@@ -11,9 +11,9 @@ export default async function CountriesTable({
   return (
     <div className="w-full">
       <h1 className={`${lusitana.className} text-xl md:text-2xl mb-3`}>
-        MtCO2 production by countries 
+        MtCO2 production by countries
       </h1>
-      <GlobalAtlasProjectReference/>
+      <GlobalAtlasProjectReference />
       <Search placeholder="Search countries..." />
       <div className="mt-6 flow-root">
         <div className="overflow-x-auto">
@@ -47,7 +47,6 @@ export default async function CountriesTable({
                         <p className="text-xs">2022</p>
                         <p className="font-medium">{country.year_2022}</p>
                       </div>
-               
                     </div>
                     <div className="pt-4 text-sm">
                       <p>{country.three_year_production} in 3 years</p>

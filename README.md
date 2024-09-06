@@ -1,19 +1,20 @@
-## Energy Nexus ##
-This is a project created from the final template for the Next.js App Router Course. 
+## Energy Nexus
+
+This is a project created from the final template for the Next.js App Router Course.
 
 The project have used data from Global Carbon Atlas Project supported by BNP Paribas Foundation
 https://globalcarbonatlas.org/
 
-### Live demo ###
+### Live demo
 
-https://energy-nexus-dashboard-61m2lkj2x-javiers-projects-dc50c503.vercel.app/
+https://energy-nexus-dashboard.vercel.app/
 
 ```
 User: user@nextmail.com
 Password: 123456
 ```
 
-### TO-DO list ###
+### TO-DO list
 
 General:
 
@@ -23,15 +24,6 @@ General:
 
 - Add hover effects when examining charts and show data value
 
-Countries: 
+Countries:
 
 - Allow user to sort data by country name, each year or three year production
-
-
-
-
-
-
-
-
-

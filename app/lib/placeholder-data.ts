@@ -14,11 +14,8 @@ const admins = [
     id: '360f079e-e68e-46df-b057-ee926dfd4c0b',
     name: 'Zeus',
     email: 'zeus@energynexus.com',
-    password: '123456'
-  }
-]
-
-
+    password: '123456',
+  },
+];
 
 export { admins, users };
-

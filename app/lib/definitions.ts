@@ -7,13 +7,12 @@ export type User = {
   name: string;
   email: string;
   password: string;
-}
+};
 
-export type MtCO2Year ={
+export type MtCO2Year = {
   year: string;
   amount: number;
-}
-
+};
 
 export type MtCO2 = {
   id: string;
@@ -22,7 +21,7 @@ export type MtCO2 = {
   year_2021: number;
   year_2022: number;
   three_year_production: number;
-}
+};
 
 export type FormattedMtCO2Table = {
   id: string;

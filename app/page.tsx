@@ -15,7 +15,8 @@ export default function Page() {
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Welcome to Energy Nexus.</strong> A dashboard containing information about different energy sources
+            <strong>Welcome to Energy Nexus.</strong> A dashboard containing
+            information about different energy sources
           </p>
           <Link
             href="/login"

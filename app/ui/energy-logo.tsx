@@ -6,7 +6,7 @@ export default function EnergyLogo() {
     <div
       className={`${lusitana.className} flex flex-row items-center leading-none text-white`}
     >
-      <BoltIcon  className="h-12 w-12 rotate-[15deg]"/>
+      <BoltIcon className="h-12 w-12 rotate-[15deg]" />
       <p className="text-[40px]">Energy Nexus</p>
     </div>
   );

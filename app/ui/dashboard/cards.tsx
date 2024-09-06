@@ -17,13 +17,22 @@ const iconMap = {
   countries: UserGroupIcon,
 };
 
-export  async function CardEnergyWrapper() {
-  const {total_countries,global_three_year_production}= await fetchCardEnergyData();
+export async function CardEnergyWrapper() {
+  const { total_countries, global_three_year_production } =
+    await fetchCardEnergyData();
 
   return (
     <>
-      <Card title="Global MtCO2 in 3 years" value={global_three_year_production} type="global" />
-      <Card title="Sample size (Studied countries)" value={total_countries} type="countries" />
+      <Card
+        title="Global MtCO2 in 3 years"
+        value={global_three_year_production}
+        type="global"
+      />
+      <Card
+        title="Sample size (Studied countries)"
+        value={total_countries}
+        type="countries"
+      />
     </>
   );
 }
@@ -35,7 +44,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type:  'global' | 'countries';
+  type: 'global' | 'countries';
 }) {
   const Icon = iconMap[type];
 

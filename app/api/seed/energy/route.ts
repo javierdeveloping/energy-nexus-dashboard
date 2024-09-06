@@ -1,4 +1,3 @@
-
 import { db } from '@vercel/postgres';
 
 import { mtco2 } from '../../../lib/energy-data';
@@ -7,7 +6,7 @@ const client = await db.connect();
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function seedMtCO2() {
-  console.log("seed mtco2")
+  console.log('seed mtco2');
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
   await client.sql`
     CREATE TABLE IF NOT EXISTS mtco2 (
@@ -33,7 +32,7 @@ async function seedMtCO2() {
   return mtco2list;
 }
 
-// a Next.js Route Handler, called route.ts, that will be used to seed your database. 
+// a Next.js Route Handler, called route.ts, that will be used to seed your database.
 //This creates a server-side endpoint that you can access in the browser to start populating your database.
 
 export async function GET() {
