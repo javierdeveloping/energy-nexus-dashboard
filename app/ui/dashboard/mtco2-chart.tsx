@@ -12,9 +12,7 @@ import { fetchMtCO2Chart, fetchRevenue } from '@/app/lib/data';
 export default async function MtCO2Chart() {
 
   const data = await fetchMtCO2Chart();
- const revenue = await fetchRevenue();
-  console.log({revenue}) 
-await generateYAxis(revenue);
+
   const chartHeight = 350;
   const { yAxisLabels, topLabel } = generateYAxisEnergy(data);
 

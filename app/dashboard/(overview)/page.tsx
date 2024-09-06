@@ -1,13 +1,14 @@
-import CardWrapper from '@/app/ui/dashboard/cards';
-import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
+import { CardEnergyWrapper } from '@/app/ui/dashboard/cards';
+import MtCO2Chart from '@/app/ui/dashboard/mtco2-chart';
+import TopProducers from '@/app/ui/dashboard/top-producers';
 import { lusitana } from '@/app/ui/fonts';
-import { Suspense } from 'react';
+import GlobalAtlasProjectReference from '@/app/ui/globalAtlasLink';
 import {
-  RevenueChartSkeleton,
-  LatestInvoicesSkeleton,
-  CardsSkeleton,
+  CardsEnergySkeleton,
+  MtCO2ChartSkeleton,
+  TopProducersSkeleton
 } from '@/app/ui/skeletons';
+import { Suspense } from 'react';
 
 export default async function Page() {
   return (
@@ -15,17 +16,18 @@ export default async function Page() {
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Dashboard
       </h1>
+      <GlobalAtlasProjectReference/>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Suspense fallback={<CardsSkeleton />}>
-          <CardWrapper />
+        <Suspense fallback={<CardsEnergySkeleton />}>
+          <CardEnergyWrapper />
         </Suspense>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
-          <RevenueChart />
+        <Suspense fallback={<MtCO2ChartSkeleton />}>
+          <MtCO2Chart />
         </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
+        <Suspense fallback={<TopProducersSkeleton />}>
+          <TopProducers />
         </Suspense>
       </div>
     </main>

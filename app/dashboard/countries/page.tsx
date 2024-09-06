@@ -1,6 +1,5 @@
-import { fetchFilteredCustomers, fetchFilteredMtCO2Countries } from '@/app/lib/data';
+import { fetchFilteredMtCO2Countries } from '@/app/lib/data';
 import CountriesTable from '@/app/ui/countries/table';
-import CustomersTable from '@/app/ui/customers/table';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

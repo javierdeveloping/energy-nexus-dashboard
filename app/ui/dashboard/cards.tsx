@@ -17,33 +17,8 @@ const iconMap = {
   countries: UserGroupIcon,
 };
 
-export default async function CardWrapper() {
-  const {
-    numberOfInvoices,
-    numberOfCustomers,
-    totalPaidInvoices,
-    totalPendingInvoices,
-  } = await fetchCardData();
-
-  return (
-    <>
-      <Card title="Collected" value={totalPaidInvoices} type="collected" />
-      <Card title="Pending" value={totalPendingInvoices} type="pending" />
-      <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
-      <Card
-        title="Total Customers"
-        value={numberOfCustomers}
-        type="customers"
-      />
-    </>
-  );
-}
-
-
 export  async function CardEnergyWrapper() {
   const {total_countries,global_three_year_production}= await fetchCardEnergyData();
-
-
 
   return (
     <>
@@ -60,7 +35,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: 'invoices' | 'customers' | 'pending' | 'collected' | 'global' | 'countries';
+  type:  'global' | 'countries';
 }) {
   const Icon = iconMap[type];
 
