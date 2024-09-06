@@ -15,7 +15,7 @@ async function seedMtCO2() {
       year_2020 DECIMAL(10, 2) NOT NULL NOT NULL,
       year_2021 DECIMAL(10, 2) NOT NULL NOT NULL,
       year_2022 DECIMAL(10, 2) NOT NULL NOT NULL,
-      three_year_production FLOAT NOT NULL
+      three_year_production DECIMAL(10, 2) NOT NULL
     );
   `;
 

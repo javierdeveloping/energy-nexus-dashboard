@@ -31,6 +31,11 @@ export type Revenue = {
   revenue: number;
 };
 
+export type MtCO2Year ={
+  year: string;
+  amount: number;
+}
+
 export type LatestInvoice = {
   id: string;
   name: string;

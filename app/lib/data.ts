@@ -6,6 +6,7 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   MtCO2,
+  MtCO2Year,
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
@@ -21,8 +22,36 @@ export async function fetchRevenue() {
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
     // console.log('Data fetch completed after 3 seconds.');
-
     return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch revenue data.');
+  }
+}
+
+export async function fetchMtCO2Chart() {
+  try {
+    // Artificially delay a response for demo purposes.
+    // Don't do this in production :)
+
+    // console.log('Fetching revenue data...');
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const data = await sql<MtCO2>`SELECT SUM(year_2020) AS year_2020, SUM(year_2021) AS year_2021, SUM(year_2022) AS year_2022 FROM mtco2`;
+
+    console.log(data.rows)
+    const transformedData : MtCO2Year[]= Object.entries(data.rows[0]).map(([key, value]) => {
+      return {
+          year: key.split('_')[1],  // Extract the year from the key
+          amount: Number(value)
+      };
+  });
+
+  console.log(transformedData)
+    return transformedData;
+
+    // console.log('Data fetch completed after 3 seconds.');
+
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch revenue data.');
@@ -81,6 +110,31 @@ export async function fetchCardData() {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch card data.');
+  }
+}
+
+
+export async function fetchCardEnergyData() {
+  try {
+    // You can probably combine these into a single SQL query
+    // However, we are intentionally splitting them to demonstrate
+    // how to initialize multiple queries in parallel with JS.
+    const mtco2CountPromise = sql`SELECT COUNT(*) AS total_countries,SUM(three_year_production) AS global_three_year_production FROM mtco2`;
+
+    const data = await Promise.all([
+      mtco2CountPromise,
+    ]);
+
+    const total_countries = Number(data[0].rows[0].total_countries ?? '0');
+    const global_three_year_production = Number(data[0].rows[0].global_three_year_production ?? '0');
+
+    return {
+      total_countries,
+      global_three_year_production
+    };
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch energy card data.');
   }
 }
 

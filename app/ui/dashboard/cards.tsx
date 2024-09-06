@@ -3,15 +3,18 @@ import {
   ClockIcon,
   UserGroupIcon,
   InboxIcon,
+  GlobeAsiaAustraliaIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
-import { fetchCardData } from '@/app/lib/data';
+import { fetchCardData, fetchCardEnergyData, fetchFilteredMtCO2Countries } from '@/app/lib/data';
 
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
   pending: ClockIcon,
   invoices: InboxIcon,
+  global: GlobeAsiaAustraliaIcon,
+  countries: UserGroupIcon,
 };
 
 export default async function CardWrapper() {
@@ -36,6 +39,20 @@ export default async function CardWrapper() {
   );
 }
 
+
+export  async function CardEnergyWrapper() {
+  const {total_countries,global_three_year_production}= await fetchCardEnergyData();
+
+
+
+  return (
+    <>
+      <Card title="Global MtCO2 in 3 years" value={global_three_year_production} type="global" />
+      <Card title="Sample size (Studied countries)" value={total_countries} type="countries" />
+    </>
+  );
+}
+
 export function Card({
   title,
   value,
@@ -43,7 +60,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: 'invoices' | 'customers' | 'pending' | 'collected';
+  type: 'invoices' | 'customers' | 'pending' | 'collected' | 'global' | 'countries';
 }) {
   const Icon = iconMap[type];
 
