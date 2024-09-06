@@ -5,6 +5,7 @@ import { mtco2 } from '../../../lib/energy-data';
 
 const client = await db.connect();
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function seedMtCO2() {
   console.log("seed mtco2")
   await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;

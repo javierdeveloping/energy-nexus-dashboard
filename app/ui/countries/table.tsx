@@ -1,8 +1,6 @@
-import Image from 'next/image';
+import { FormattedMtCO2Table } from '@/app/lib/definitions';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
-import { FormattedMtCO2Table } from '@/app/lib/definitions';
-import Link from 'next/link';
 import GlobalAtlasProjectReference from '../globalAtlasLink';
 
 export default async function CountriesTable({

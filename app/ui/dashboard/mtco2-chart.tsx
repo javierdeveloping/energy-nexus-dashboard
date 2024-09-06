@@ -1,7 +1,7 @@
-import { generateYAxis, generateYAxisEnergy } from '@/app/lib/utils';
-import { CalendarIcon } from '@heroicons/react/24/outline';
+import { fetchMtCO2Chart } from '@/app/lib/data';
+import { generateYAxisEnergy } from '@/app/lib/utils';
 import { lusitana } from '@/app/ui/fonts';
-import { fetchMtCO2Chart, fetchRevenue } from '@/app/lib/data';
+import { CalendarIcon } from '@heroicons/react/24/outline';
 
 // This component is representational only.
 // For data visualization UI, check out:
