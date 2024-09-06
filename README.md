@@ -8,8 +8,10 @@ https://globalcarbonatlas.org/
 
 https://energy-nexus-dashboard-61m2lkj2x-javiers-projects-dc50c503.vercel.app/
 
+```
 User: user@nextmail.com
 Password: 123456
+```
 
 ### TO-DO list ###
 
