@@ -21,11 +21,12 @@ General:
 
 - Add CO2 futures chats using external data providers
 
+- Add hover effects when examining charts and show data value
+
 Countries: 
 
 - Allow user to sort data by country name, each year or three year production
 
-- Add hover effects when examining charts and show data value
 
 
 
