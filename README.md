@@ -1,5 +1,9 @@
-## Next.js App Router Course - Final
+## Energy Nexus ##
+This is a project created from the final template for the Next.js App Router Course. 
 
-This is the final template for the Next.js App Router Course. It contains the final code for the dashboard application.
+The project have used data from Global Carbon Atlas Project supported by BNP Paribas Foundation
+https://globalcarbonatlas.org/
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+
+
+
