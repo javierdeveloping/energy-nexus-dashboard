@@ -11,6 +11,8 @@ import {
   MtCO2ChartSkeleton,
 } from '@/app/ui/skeletons';
 import MtCO2Chart from '@/app/ui/dashboard/mtco2-chart';
+import TopProducers from '@/app/ui/dashboard/top-producers';
+import GlobalAtlasProjectReference from '@/app/ui/globalAtlasLink';
 
 export default async function Page() {
   return (
@@ -18,6 +20,7 @@ export default async function Page() {
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Dashboard
       </h1>
+      <GlobalAtlasProjectReference/>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Suspense fallback={<CardsEnergySkeleton />}>
           <CardEnergyWrapper />
@@ -28,7 +31,7 @@ export default async function Page() {
           <MtCO2Chart />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
+          <TopProducers />
         </Suspense>
       </div>
     </main>

@@ -6,6 +6,7 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   MtCO2,
+  MtCO2Ranking,
   MtCO2Year,
   Revenue,
 } from './definitions';
@@ -75,6 +76,23 @@ export async function fetchLatestInvoices() {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch the latest invoices.');
+  }
+}
+
+export async function fetchRanking() {
+  try {
+    const data = await sql<MtCO2Ranking>`
+      SELECT mtco2.name, mtco2.three_year_production
+      FROM mtco2
+      ORDER BY mtco2.three_year_production DESC
+      LIMIT 5`;
+
+    const topProducers = data.rows;
+    console.log({topProducers});
+    return topProducers;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the top producers.');
   }
 }
 

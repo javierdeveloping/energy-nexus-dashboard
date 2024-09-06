@@ -109,3 +109,5 @@ export type FormattedMtCO2Table = {
   year_2022: number;
   three_year_production: number;
 };
+
+export type MtCO2Ranking = Pick<MtCO2, 'name' | 'three_year_production'>;

@@ -3,6 +3,7 @@ import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
 import { FormattedMtCO2Table } from '@/app/lib/definitions';
 import Link from 'next/link';
+import GlobalAtlasProjectReference from '../globalAtlasLink';
 
 export default async function CountriesTable({
   countries,
@@ -14,8 +15,7 @@ export default async function CountriesTable({
       <h1 className={`${lusitana.className} text-xl md:text-2xl mb-3`}>
         MtCO2 production by countries 
       </h1>
-      <div className={"text-s mb-5"}> Data feed from <Link href="https://globalcarbonatlas.org/" className="text-emerald-600 font-bold">Global Carbon Atlas Project</Link> supported by BNP Paribas Foundation</div>
-    
+      <GlobalAtlasProjectReference/>
       <Search placeholder="Search countries..." />
       <div className="mt-6 flow-root">
         <div className="overflow-x-auto">
